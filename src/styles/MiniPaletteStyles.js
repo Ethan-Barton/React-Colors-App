@@ -50,6 +50,7 @@ export default {
 		top: "0px",
 		padding: "10px",
 		zIndex: 10,
-		opacity: 0
+		opacity: 0,
+		boxSizing: "initial"
 	}
 };
