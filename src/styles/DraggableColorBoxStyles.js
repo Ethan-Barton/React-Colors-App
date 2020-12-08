@@ -1,4 +1,5 @@
 import sizes from "./sizes"
+import chroma from "chroma-js"
 export default {
     root: {
         width: "20%",
@@ -9,7 +10,7 @@ export default {
 		cursor: "pointer",
         marginBottom: "-3.5px",
         "&:hover svg": {
-            color: "white",
+            color: props => chroma(props.color).luminance() <= 0.1 ? "white" : "black",
             transform: "scale(1.5)"
         },
         [sizes.down("lg")]: {
@@ -31,7 +32,7 @@ export default {
 		width: "100%",
 		left: "0px",
 		bottom: "0px",
-		color: "rgba(0, 0, 0, 0.5)",
+		color: props => chroma(props.color).luminance() <= 0.1 ? "white" : "black",
 		letterSpacing: "1px",
 		textTransform: "uppercase",
         fontSize: "12px",
