@@ -12,6 +12,7 @@ class ColorBox extends Component {
 		this.changeCopyState = this.changeCopyState.bind(this);
 	}
 	changeCopyState() {
+		// copy overlay
 		this.setState({ copied: true }, () => {
 			setTimeout(() => this.setState({ copied: false }), 1500);
 		});

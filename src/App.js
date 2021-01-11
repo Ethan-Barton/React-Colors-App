@@ -21,17 +21,20 @@ class App extends Component {
 		this.deletePalette = this.deletePalette.bind(this);
 	}
 	findPalette(id) {
+		// grab specific palette id
 		return this.state.palettes.find(function(palette) {
 			return palette.id === id;
 		});
 	}
 	deletePalette(id){
+		// delete palette from local storage
 		this.setState(
 			st => ({palettes: st.palettes.filter(palette => palette.id !== id)}),
 			this.syncLocalStorage
 		);
 	}
 	savePalette(newPalette){
+		// save to local storage
 		this.setState({palettes: [...this.state.palettes, newPalette]}, this.syncLocalStorage);
 	}
 	syncLocalStorage(){
